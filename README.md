@@ -3,12 +3,15 @@
 For week 7, you will be developing the Web3 Playground. This was one of the early demo project by the cohort 1 mentor, [@medardm](https://github.com/medardm). The project was cloned from [sparkpointio/bdb-web3-playground](https://github.com/sparkpointio/bdb-web3-playground), and is improved and maintained by [@harveyjavier](https://github.com/harveyjavier) for [SparkLearn EdTech](https://sparklearn-edtech.com/).
 
 ## Setup
-1. Clone this repository by running `git clone https://github.com/sparklearnedtech/bdb2022-week7.git`.
-2. Create your own branch using this format (firstname-lastname), checkout, and make sure you are not on main branch.
+1. Clone this repository by running git clone. 
 	```
-	git branch john-doe    // create branch using firstname-lastname format
-	git checkout john-doe  // checkout on newly created branch
-	git branch             // check and make sure you are currently on your john-doe branch, not main
+	git clone https://github.com/sparklearnedtech/bdb2022-week7.git
+	```
+2. Create your own branch using this format (firstname-lastname), checkout, and make sure you are not on the main branch.
+	```
+	git branch john-doe    // create a branch using the firstname-lastname format
+	git checkout john-doe  // checkout on the newly created branch
+	git branch             // check and make sure you are currently on your john-doe branch, not the main
 	```
 3. Run `npm install` to generate your `node_modules` folder and download all necessary packages.
 5. Then run `npm start` to check the web app and start coding. Mostly you will code on `src/App.js`.
