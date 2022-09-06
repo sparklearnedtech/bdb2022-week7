@@ -29,3 +29,10 @@ For week 7, you will be developing the Web3 Playground. This was one of the earl
 
 	Here's a demo GIF of the exercise output for your guide.
 	![Demo](https://github.com/sparklearnedtech/bdb2022-week7/blob/main/src/images/sparklearn-web3-playground.gif)
+
+## Rubrics
+This exercise will be graded with the following criterias:
+* Requirements & Delivery (5 pts.) - How you followed the instructions of the exercise and deliver its specific requirements.
+* Runtime (5 pts.) - How your project will run seamlessly on the mentor's local end and environment.
+* Code standard & cleanliness (5 pts.) - The tidyness of your code and its standard. Will be checked by linters.
+* Creativity (5 pts.) - How presentable your project will look on runtime and how you played around with the project's components and functions.
