@@ -33,6 +33,7 @@ function App() {
     function onChange(event) {
         // console.log(event)
         const {name, value} = event.target;
+        // console.log(name, value)
         _setState(name, value);
     }
 
@@ -91,7 +92,8 @@ function App() {
                                         onClick={async () => {
                                             let accounts = await window.web3.eth.requestAccounts()
                                             _setState('connectedAccounts', accounts);
-                                            console.log('connectedAccounts', accounts)
+                                            console.log('connectedAccounts:', accounts[0])
+                                            console.log("==========");
                                         }}
                                     >Run
                                     </button>
@@ -113,10 +115,12 @@ function App() {
                                         type="button"
                                         onClick={async () => {
                                             let address = await window.web3.eth.currentProvider.selectedAddress
-                                            console.log(typeof address)
+                                            // console.log(typeof address)
                                             // _setState('selectedAddress', address);
                                             _setState("selectedAddress", address)
-                                            console.log(state.selectedAddress)
+                                            // console.log(state.selectedAddress)
+                                            console.log("selectedAddress:", address)
+                                            console.log("==========");
                                         }}
                                     >Run
                                     </button>
@@ -143,7 +147,8 @@ function App() {
                                         type="button"
                                         onClick={async () => {
                                             let bal = await window.web3.eth.getBalance(state.addressToGetBalance)
-                                            console.log(bal)
+                                            console.log("balance:", bal)
+                                            console.log("==========");
                                         }}
                                     >Run
                                     </button>
@@ -171,7 +176,8 @@ function App() {
                                         type="button"
                                         onClick={async () => {
                                             let ether = await window.web3.utils.fromWei(state.valueInWei, "ether")
-                                            console.log(ether)
+                                            console.log("ether:", ether)
+                                            console.log("==========");
                                         }}
                                     >Run
                                     </button>
@@ -198,7 +204,8 @@ function App() {
                                         type="button"
                                         onClick={async () => {
                                             let wei = await window.web3.utils.toWei(state.valueInEther, "ether")
-                                            console.log(wei)
+                                            console.log("wei:", wei)
+                                            console.log("==========");
                                         }}
                                     >Run
                                     </button>
@@ -220,7 +227,8 @@ function App() {
                                         type="button"
                                         onClick={async () => {
                                             let utils = await window.web3.utils
-                                            console.log(utils)
+                                            console.log("utils:", utils)
+                                            console.log("==========");
                                         }}
                                     >Run
                                     </button>
@@ -239,11 +247,13 @@ function App() {
                                                 name='contractABI'
                                                 type="text"
                                                 onChange={onChange}
+                                                placeholder="contractABI"
                                             />', 
                                             '<input
                                                 name='contractAddress'
                                                 type="text"
                                                 onChange={onChange}
+                                                placeholder="contractAddress"
                                             />'
                                         )
                                         <br/>
@@ -252,10 +262,11 @@ function App() {
                                         className={"submit btn btn-flat btn-primary "}
                                         type="button"
                                         onClick={async () => {
-                                            console.log(state.contractABI)
-                                            console.log(state.contractAddress)
-                                            window.token = await new window.web3.eth.Contract(state.contractABI, state.contractAddress)
-                                            console.log(window.token)
+                                            // console.log(state.contractABI)
+                                            // console.log(state.contractAddress)
+                                            window.token = await new window.web3.eth.Contract(JSON.parse(state.contractABI), state.contractAddress)
+                                            console.log("window.contract:", window.token)
+                                            console.log("==========");
                                         }}
                                     >Run
                                     </button>
@@ -274,11 +285,13 @@ function App() {
                                                 name='toAddress'
                                                 type="text"
                                                 onChange={onChange}
+                                                placeholder="recepient address"
                                             />', 
                                             '<input
                                                 name='amount'
                                                 type="text"
                                                 onChange={onChange}
+                                                placeholder="amount"
                                             />'
                                         )
                                         <br/>
@@ -293,7 +306,8 @@ function App() {
                                                 value: state.amount
                                             }
                                             let txn = await window.web3.eth.sendTransaction(txnObj)
-                                            console.log(txn)
+                                            console.log("txn:", txn)
+                                            console.log("==========")
                                         }}
                                     >Run
                                     </button>
