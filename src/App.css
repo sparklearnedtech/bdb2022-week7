@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+code {
+  display: flex;
+  justify-content: space-between;
+  /* flex: 1; */
+  align-items: center;
+}
+
+code > button {
+  height: 2.5rem;
+}

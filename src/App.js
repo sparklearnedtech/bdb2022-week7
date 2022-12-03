@@ -31,7 +31,7 @@ function App() {
     }
 
     function onChange(event) {
-        console.log(event)
+        // console.log(event)
         const {name, value} = event.target;
         _setState(name, value);
     }
@@ -53,13 +53,15 @@ function App() {
                             {/* Web3 initialization */}
                             <div>
                                 <code>
-                                    [Initialize Web3, before anything else, let's use a custom function for this one]
-                                    <br/>
-                                    window.web3 = configureWeb3();
-                                    <br/>
-                                    <img src={configureWeb3Code} alt=""/>
+                                    <div>
+                                        [Initialize Web3, before anything else, let's use a custom function for this one]
+                                        <br/>
+                                        window.web3 = configureWeb3();
+                                        <br/>
+                                        <img src={configureWeb3Code} alt=""/>
+                                    </div>
                                     <button
-                                        className={"submit btn btn-flat btn-primary float-end " + (!state.web3 ? '' : 'disabled')}
+                                        className={"submit btn btn-flat btn-primary " + (!state.web3 ? '' : 'disabled')}
                                         type="button"
                                         onClick={async () => {
                                             // let's expose web3 to the browser
@@ -77,13 +79,14 @@ function App() {
                             {/* Request accounts function */}
                             <div>
                                 <code>
-                                    [Request accounts function]
-                                    <br/>
-                                    window.web3.eth.requestAccounts();
-                                    <br/>
-                                    
+                                    <div>
+                                        [Request accounts function]
+                                        <br/>
+                                        window.web3.eth.requestAccounts();
+                                        <br/>
+                                    </div>
                                     <button
-                                        className={"submit btn btn-flat btn-primary float-end " + (state.connectedAccounts.length <= 0 ? '' : 'disabled')}
+                                        className={"submit btn btn-flat btn-primary " + (state.connectedAccounts.length <= 0 ? '' : 'disabled')}
                                         type="button"
                                         onClick={async () => {
                                             let accounts = await window.web3.eth.requestAccounts()
@@ -99,13 +102,14 @@ function App() {
                             {/* Show selected address function */}
                             <div>
                                 <code>
-                                    [Show selected address function]
-                                    <br/>
-                                    window.web3.eth.currentProvider.selectedAddress;
-                                    <br/>
-                                    
+                                    <div>
+                                        [Show selected address function]
+                                        <br/>
+                                        window.web3.eth.currentProvider.selectedAddress;
+                                        <br/>
+                                    </div>
                                     <button
-                                        className={"submit btn btn-flat btn-primary float-end " + (!state.selectedAddress ? '' : 'disabled')}
+                                        className={"submit btn btn-flat btn-primary " + (!state.selectedAddress ? '' : 'disabled')}
                                         type="button"
                                         onClick={async () => {
                                             let address = await window.web3.eth.currentProvider.selectedAddress
@@ -122,19 +126,20 @@ function App() {
                             {/* Get eth balance function */}
                             <div>
                                 <code>
-                                    [Get eth balance function]
-                                    <br/>
-                                    window.web3.eth.getBalance('
-                                        <input
-                                            name='addressToGetBalance'
-                                            type="text"
-                                            onChange={onChange}
-                                        />
-                                    ')
-                                    <br/>
-                                    
+                                    <div>
+                                        [Get eth balance function]
+                                        <br/>
+                                        window.web3.eth.getBalance('
+                                            <input
+                                                name='addressToGetBalance'
+                                                type="text"
+                                                onChange={onChange}
+                                            />
+                                        ')
+                                        <br/>
+                                    </div>
                                     <button
-                                        className={"submit btn btn-flat btn-primary float-end "}
+                                        className={"submit btn btn-flat btn-primary "}
                                         type="button"
                                         onClick={async () => {
                                             let bal = await window.web3.eth.getBalance(state.addressToGetBalance)
@@ -149,19 +154,20 @@ function App() {
                             {/* Convert wei to ether function */}
                             <div>
                                 <code>
-                                    [Convert wei to ether function]
-                                    <br/>
-                                    window.web3.utils.fromWei('
-                                        <input
-                                            name='valueInWei'
-                                            type="text"
-                                            onChange={onChange}
-                                        />
-                                    ')
-                                    <br/>
-                                    
+                                    <div>
+                                        [Convert wei to ether function]
+                                        <br/>
+                                        window.web3.utils.fromWei('
+                                            <input
+                                                name='valueInWei'
+                                                type="text"
+                                                onChange={onChange}
+                                            />
+                                        ')
+                                        <br/>
+                                    </div>
                                     <button
-                                        className={"submit btn btn-flat btn-primary float-end "}
+                                        className={"submit btn btn-flat btn-primary "}
                                         type="button"
                                         onClick={async () => {
                                             let ether = await window.web3.utils.fromWei(state.valueInWei, "ether")
@@ -175,19 +181,20 @@ function App() {
                             {/* Convert ether to wei function */}
                             <div>
                                 <code>
-                                    [Convert ether to wei function]
-                                    <br/>
-                                    window.web3.utils.fromWei('
-                                        <input
-                                            name='valueInEther'
-                                            type="text"
-                                            onChange={onChange}
-                                        />
-                                    ')
-                                    <br/>
-                                    
+                                    <div>
+                                        [Convert ether to wei function]
+                                        <br/>
+                                        window.web3.utils.fromWei('
+                                            <input
+                                                name='valueInEther'
+                                                type="text"
+                                                onChange={onChange}
+                                            />
+                                        ')
+                                        <br/>
+                                    </div>
                                     <button
-                                        className={"submit btn btn-flat btn-primary float-end "}
+                                        className={"submit btn btn-flat btn-primary "}
                                         type="button"
                                         onClick={async () => {
                                             let wei = await window.web3.utils.toWei(state.valueInEther, "ether")
@@ -202,13 +209,14 @@ function App() {
                             {/* Show Web3 utilities function */}
                             <div>
                                 <code>
-                                    [Show Web3 utilities function]
-                                    <br/>
-                                    window.web3.utils;
-                                    <br/>
-                                    
+                                    <div>
+                                        [Show Web3 utilities function]
+                                        <br/>
+                                        window.web3.utils;
+                                        <br/>
+                                    </div>
                                     <button
-                                        className={"submit btn btn-flat btn-primary float-end "}
+                                        className={"submit btn btn-flat btn-primary "}
                                         type="button"
                                         onClick={async () => {
                                             let utils = await window.web3.utils
@@ -223,24 +231,25 @@ function App() {
                             {/* Initialize a smart contract function */}
                             <div>
                                 <code>
-                                    [Initialize a smart contract function - Please provide a token ABI and contract address]
-                                    <br/>
-                                    window.contract = new web3.eth.Contract(
-                                        '<input
-                                            name='contractABI'
-                                            type="text"
-                                            onChange={onChange}
-                                        />', 
-                                        '<input
-                                            name='contractAddress'
-                                            type="text"
-                                            onChange={onChange}
-                                        />'
-                                    )
-                                    <br/>
-                                    
+                                    <div>
+                                        [Initialize a smart contract function - Please provide a token ABI and contract address]
+                                        <br/>
+                                        window.contract = new web3.eth.Contract(
+                                            '<input
+                                                name='contractABI'
+                                                type="text"
+                                                onChange={onChange}
+                                            />', 
+                                            '<input
+                                                name='contractAddress'
+                                                type="text"
+                                                onChange={onChange}
+                                            />'
+                                        )
+                                        <br/>
+                                    </div>
                                     <button
-                                        className={"submit btn btn-flat btn-primary float-end "}
+                                        className={"submit btn btn-flat btn-primary "}
                                         type="button"
                                         onClick={async () => {
                                             console.log(state.contractABI)
@@ -257,24 +266,25 @@ function App() {
                             {/* Send a transaction function */}
                             <div>
                                 <code>
-                                    [Send a transaction function]
-                                    <br/>
-                                    window.web3.eth.sendTransaction('{state.fromAddress}'
-                                        '<input
-                                            name='toAddress'
-                                            type="text"
-                                            onChange={onChange}
-                                        />', 
-                                        '<input
-                                            name='amount'
-                                            type="text"
-                                            onChange={onChange}
-                                        />'
-                                    )
-                                    <br/>
-                                    
+                                    <div>
+                                        [Send a transaction function]
+                                        <br/>
+                                        window.web3.eth.sendTransaction('{state.fromAddress}'
+                                            '<input
+                                                name='toAddress'
+                                                type="text"
+                                                onChange={onChange}
+                                            />', 
+                                            '<input
+                                                name='amount'
+                                                type="text"
+                                                onChange={onChange}
+                                            />'
+                                        )
+                                        <br/>
+                                    </div>
                                     <button
-                                        className={"submit btn btn-flat btn-primary float-end "}
+                                        className={"submit btn btn-flat btn-primary "}
                                         type="button"
                                         onClick={async () => {
                                             let txnObj = {
